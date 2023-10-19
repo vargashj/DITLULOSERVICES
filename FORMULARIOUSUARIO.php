@@ -64,7 +64,7 @@
             </div>
             <div class="col-md-6">
               <label for="validationCustom03" class="form-label">FOTO</label>
-              <input type="text" class="form-control" name="foto" id="foto">
+              <input type="file" class="form-control" name="foto" id="foto" accept="image/*">
 
             </div>
   

@@ -8,9 +8,13 @@
     $Telefono = $_POST['tel'];
     $Correo= $_POST['cor'];
     $Descripcion = $_POST['des'];
+    $RutaImagen ='img/'.$_FILES['foto']['name'];
+    $NombreImagen=$_FILES['foto']['tmp_name'];
+    move_uploaded_file($NombreImagen,$RutaImagen);
+
         $query="INSERT INTO
-        usuarios(IdUsuario,NombreApellido, Cargo,Estudios,Hubicacion,Telefono,Correo,Descripcion,Rol)
-        VALUES($IdUsuario,'$NombreApellido','$Cargo','$Estudios','$Hubicacion','$Telefono','$Correo','$Descripcion',2)";
+        usuarios(IdUsuario,NombreApellido, Cargo,Estudios,Hubicacion,Telefono,Correo,Descripcion,Rol,Foto)
+        VALUES($IdUsuario,'$NombreApellido','$Cargo','$Estudios','$Hubicacion','$Telefono','$Correo','$Descripcion',2 ,'$RutaImagen')";
         $consulta = mysqli_query($conect,$query);
 
 
